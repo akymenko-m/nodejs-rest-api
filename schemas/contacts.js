@@ -9,6 +9,6 @@ const addSchema = Joi.object({
 
 const updateFavoriteSchema = Joi.object({
     favorite: Joi.boolean(),
-});
+}).min(1);
 
 module.exports = { addSchema, updateFavoriteSchema };
