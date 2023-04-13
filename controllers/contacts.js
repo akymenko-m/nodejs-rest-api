@@ -1,4 +1,3 @@
-// const contacts = require("../models/contacts");
 const Contact = require("../models/contact");
 const { HttpError, ctrlWrapper } = require("../helpers");
 
@@ -49,9 +48,9 @@ const updateContact = async (req, res) => {
 
 const updateStatusContact = async (req, res) => {
     const { contactId } = req.params;
+    const { body } = req.body;
 
-    // не спрацьовує викидання помилки
-    if (req.body === {} || req.body === "") {
+    if (!body) {
         throw HttpError(400, "missing field favorite");
     }
 
