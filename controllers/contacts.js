@@ -6,10 +6,12 @@ const listContacts = async (req, res, next) => {
     const { page = 1, limit = 10, favorite } = req.query;
     const skip = (page - 1) * limit;
 
+    console.log(favorite);
+
     const result = await Contact.find(
-        { owner },
+        { owner, favorite },
         {},
-        { skip, limit, favorite: favorite }
+        { skip, limit }
     ).populate("owner", "email subscription");
 
     console.log("req.query", req.query);
