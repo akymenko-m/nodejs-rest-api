@@ -2,15 +2,18 @@ const Contact = require("../models/contact");
 const { HttpError, ctrlWrapper } = require("../helpers");
 
 const listContacts = async (req, res, next) => {
-    // console.log(req.user);
     const { _id: owner } = req.user;
-    const { page = 1, limit = 20 } = req.query;
+    const { page = 1, limit = 10, favorite } = req.query;
     const skip = (page - 1) * limit;
 
-    const result = await Contact.find({ owner }, { skip, limit }).populate(
-        "owner",
-        "email"
-    );
+    const result = await Contact.find(
+        { owner },
+        {},
+        { skip, limit, favorite: favorite }
+    ).populate("owner", "email subscription");
+
+    console.log("req.query", req.query);
+    // console.log(result);
     res.json(result);
 };
 
