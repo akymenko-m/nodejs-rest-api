@@ -11,4 +11,10 @@ const updateFavoriteSchema = Joi.object({
     favorite: Joi.boolean(),
 }).min(1);
 
-module.exports = { addSchema, updateFavoriteSchema };
+const filterFavoriteSchema = Joi.object({
+    favorite: Joi.boolean(),
+    page: Joi.number(),
+    limit: Joi.number(),
+});
+
+module.exports = { addSchema, updateFavoriteSchema, filterFavoriteSchema };

@@ -3,6 +3,7 @@ const validateBodyFaforite = require("./validateBodyFaforite");
 const isValidId = require("./isValidId");
 const validateBodyUsers = require("./validateBodyUsers");
 const authenticate = require("./authenticate");
+const validateQuery = require("./validateQuery");
 
 module.exports = {
     validateBody,
@@ -10,4 +11,5 @@ module.exports = {
     validateBodyFaforite,
     validateBodyUsers,
     authenticate,
+    validateQuery,
 };

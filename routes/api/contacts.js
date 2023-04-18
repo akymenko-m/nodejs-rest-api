@@ -7,10 +7,16 @@ const {
     isValidId,
     validateBodyFaforite,
     authenticate,
+    validateQuery,
 } = require("../../middlewares");
 const schemas = require("../../schemas/contacts");
 
-router.get("/", authenticate, ctrl.listContacts);
+router.get(
+    "/",
+    authenticate,
+    validateQuery(schemas.filterFavoriteSchema),
+    ctrl.listContacts
+);
 
 router.get("/:contactId", authenticate, isValidId, ctrl.getById);
 
