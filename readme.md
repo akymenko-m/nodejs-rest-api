@@ -1,31 +1,24 @@
-## GoIT Node.js Course Template Homework
+## RREST API for work with a collection of contacts
 
-Виконайте форк цього репозиторію для виконання домашніх завдань (2-6)
-Форк створить репозиторій на вашому http://github.com
+## Features
 
-Додайте ментора до колаборації
+-   Created server and configured routing for work with a collection of contacts using Express and layers Morgan and Cors.
+-   Configured Routing for work with a collection of contacts using the .
+-   Connected and configured MongoDB to work with contact collection via Mongoose.
+-   Added user authentication / authorization via JWT.
+-   Ability to upload a user's avatar via Multer.
+-   Verification of the user's email after registration using the SendGrid service.
+-   Postman was used to work with the REST API.
 
-Для кожної домашньої роботи створюйте свою гілку.
+## Setup
 
-- hw02
-- hw03
-- hw04
-- hw05
-- hw06
+-   Clone the repository
+-   Install the project's dependencies in the terminal with the npm install command.
+-   The command npm start - starts the server in production mode.
 
-Кожна нова гілка для др повинна робитися з master
+### Commands:
 
-Після того, як ви закінчили виконувати домашнє завдання у своїй гілці, необхідно зробити пулл-реквест (PR). Потім додати ментора для рев'ю коду. Тільки після того, як ментор заапрувить PR, ви можете виконати мердж гілки з домашнім завданням у майстер.
-
-Уважно читайте коментарі ментора. Виправте зауваження та зробіть коміт у гілці з домашнім завданням. Зміни підтягнуться у PR автоматично після того, як ви відправите коміт з виправленнями на github
-Після виправлення знову додайте ментора на рев'ю коду.
-
-- При здачі домашньої роботи є посилання на PR
-- JS-код чистий та зрозумілий, для форматування використовується Prettier
-
-### Команди:
-
-- `npm start` &mdash; старт сервера в режимі production
-- `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
-- `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
-- `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
+-   `npm start` &mdash; server start in production mode
+-   `npm run start:dev` &mdash; start the server in development mode
+-   `npm run lint` &mdash; run a code check execution with eslint
+-   `npm lint:fix` &mdash; the same linter check, but with automatic fixes for simple errors

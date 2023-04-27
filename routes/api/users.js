@@ -7,9 +7,13 @@ const {
     authenticate,
     upload,
 } = require("../../middlewares");
-const userSchema = require("../../schemas/users");
+const { userSchema, emailSchema } = require("../../schemas/users");
 
 router.post("/register", validateBodyUsers(userSchema), ctrl.register);
+
+router.get("/verify/:verificationToken", ctrl.verifyEmail);
+
+router.post("/verify", validateBodyUsers(emailSchema), ctrl.resendVerifyEmail);
 
 router.post("/login", validateBodyUsers(userSchema), ctrl.login);
 
